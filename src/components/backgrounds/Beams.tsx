@@ -290,6 +290,11 @@ const Beams: React.FC<BeamsProps> = ({
       const height = Math.max(1, rect.height);
       renderer.setSize(width, height);
       camera.perspective({ aspect: width / height });
+      // Resizing a canvas clears its buffer to transparent black immediately —
+      // paint it back over in the same tick instead of waiting for the next
+      // rAF, or a container that resizes every frame (e.g. driven by a
+      // scroll-linked animation) strobes black on each resize.
+      renderer.render({ scene, camera });
     };
     const ro = new ResizeObserver(setSize);
     ro.observe(container);
