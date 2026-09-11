@@ -3,6 +3,7 @@
 import { gsap } from "gsap";
 import { ArrowUpRight } from "lucide-react";
 import React, { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { onHashLinkClick } from "@/lib/hashLink";
 
 /**
  * Adapted from react-bits' CardNav (https://reactbits.dev/components/card-nav),
@@ -209,6 +210,7 @@ const CardNav: React.FC<CardNavProps> = ({
         <div className="card-nav-top absolute inset-x-0 top-0 z-[2] flex h-[60px] items-center justify-between p-2 pl-[1.1rem]">
           <a
             href="#top"
+            onClick={(e) => onHashLinkClick(e, "#top")}
             className="logo-container order-1 flex items-center md:absolute md:left-1/2 md:top-1/2 md:order-none md:-translate-x-1/2 md:-translate-y-1/2"
             aria-label="BizIdeas+ — back to top"
           >
@@ -217,6 +219,7 @@ const CardNav: React.FC<CardNavProps> = ({
 
           <a
             href={ctaHref}
+            onClick={(e) => onHashLinkClick(e, ctaHref)}
             className={`card-nav-cta-button order-2 hidden h-full cursor-pointer items-center rounded-[calc(1rem-0.2rem)] px-5 font-medium transition-colors duration-300 md:inline-flex ${ctaClassName}`}
           >
             {ctaLabel}
@@ -258,32 +261,43 @@ const CardNav: React.FC<CardNavProps> = ({
           }`}
           aria-hidden={!isExpanded}
         >
-          {(items || []).slice(0, 3).map((item, idx) => (
-            <div
-              key={`${item.label}-${idx}`}
-              className="nav-card relative flex h-auto min-h-[60px] min-w-0 flex-[1_1_auto] select-none flex-col gap-2 rounded-xl p-[12px_16px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
-            >
-              <div className="nav-card-label text-[17px] font-medium tracking-[-0.01em] md:text-[20px]">
-                {item.label}
-              </div>
-              <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
-                {item.links?.map((lnk, i) => (
+          {(items || []).slice(0, 3).map((item, idx) => {
+            // Each card links to exactly one section, so the whole box is
+            // the click target (not just the small link line at the
+            // bottom) — a full-cover anchor sits under the visible content.
+            const link = item.links?.[0];
+            return (
+              <div
+                key={`${item.label}-${idx}`}
+                className="nav-card relative flex h-auto min-h-[60px] min-w-0 flex-[1_1_auto] select-none flex-col gap-2 rounded-xl p-[12px_16px] md:h-full md:min-h-0 md:flex-[1_1_0%]"
+                ref={setCardRef(idx)}
+                style={{ backgroundColor: item.bgColor, color: item.textColor }}
+              >
+                {link && (
                   <a
-                    key={`${lnk.label}-${i}`}
-                    className="nav-card-link inline-flex cursor-pointer items-center gap-[6px] text-[14px] no-underline opacity-90 transition-opacity duration-300 hover:opacity-100 md:text-[15px]"
-                    href={lnk.href}
-                    aria-label={lnk.ariaLabel}
-                    onClick={closeMenu}
-                  >
-                    <ArrowUpRight className="nav-card-link-icon h-[15px] w-[15px] shrink-0" aria-hidden="true" />
-                    {lnk.label}
-                  </a>
-                ))}
+                    className="absolute inset-0 z-1 rounded-xl"
+                    href={link.href}
+                    aria-label={link.ariaLabel}
+                    onClick={(e) => {
+                      onHashLinkClick(e, link.href);
+                      closeMenu();
+                    }}
+                  />
+                )}
+                <div className="nav-card-label text-[17px] font-medium tracking-[-0.01em] md:text-[20px]">
+                  {item.label}
+                </div>
+                <div className="nav-card-links mt-auto flex flex-col gap-[2px]">
+                  {link && (
+                    <span className="nav-card-link inline-flex items-center gap-[6px] text-[14px] opacity-90 transition-opacity duration-300 md:text-[15px]">
+                      <ArrowUpRight className="nav-card-link-icon h-[15px] w-[15px] shrink-0" aria-hidden="true" />
+                      {link.label}
+                    </span>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </nav>
     </div>

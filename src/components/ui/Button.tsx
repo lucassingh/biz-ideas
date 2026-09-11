@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { onHashLinkClick } from "@/lib/hashLink";
 
 type ButtonVariant = "primary" | "ghost" | "inverse" | "outline-light";
 
@@ -30,6 +31,7 @@ export function Button({
   return (
     <motion.a
       href={href}
+      onClick={(e) => onHashLinkClick(e, href)}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.97 }}
       transition={{ duration: 0.2, ease: "easeOut" }}

@@ -4,15 +4,19 @@ import { Reveal } from "@/components/ui/Reveal";
 type Brand = {
   file: string;
   name: string;
+  // Most marks fill their slot at the same visual weight under `contain`,
+  // but this one's aspect ratio nearly matches the slot's, so it reads
+  // noticeably larger than its neighbors unless scaled back down.
+  scale?: number;
 };
 
 const brands: Brand[] = [
-  { file: "agritec-global.svg", name: "Agritec Global" },
   { file: "odoo.svg", name: "Odoo" },
   { file: "elevenlabs.svg", name: "ElevenLabs" },
   { file: "btrain.svg", name: "BTrAIn" },
-  { file: "qdis-mark.svg", name: "Qdis" },
+  { file: "qdis-mark.svg", name: "Qdis", scale: 0.8 },
   { file: "n8n.svg", name: "n8n" },
+  { file: "bgenai.svg", name: "BGenAI" },
 ];
 
 // Fixed slot so wildly different logo proportions (a 90px-tall wordmark next
@@ -20,7 +24,7 @@ const brands: Brand[] = [
 // logo inside it instead of stretching every logo to the same height.
 const LOGO_SLOT_WIDTH = 190;
 
-function BrandMark({ file, name }: Brand) {
+function BrandMark({ file, name, scale = 1 }: Brand) {
   return (
     <span className="inline-flex items-center justify-center" style={{ width: LOGO_SLOT_WIDTH }}>
       <span
@@ -28,6 +32,7 @@ function BrandMark({ file, name }: Brand) {
         className="block w-full bg-primary"
         style={{
           height: "var(--logoloop-logoHeight)",
+          transform: scale !== 1 ? `scale(${scale})` : undefined,
           WebkitMaskImage: `url(/logos/${file})`,
           maskImage: `url(/logos/${file})`,
           WebkitMaskRepeat: "no-repeat",

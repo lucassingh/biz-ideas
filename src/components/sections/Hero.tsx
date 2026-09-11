@@ -129,8 +129,8 @@ export function Hero() {
                         color1={palette.accent}
                         color2={palette.secondary}
                         color3={palette.primary}
-                        timeSpeed={reduceMotion ? 0 : 0.55}
-                        warpSpeed={reduceMotion ? 0 : 3.6}
+                        timeSpeed={reduceMotion ? 0 : 1.05}
+                        warpSpeed={reduceMotion ? 0 : 6.2}
                         warpFrequency={3.5}
                         warpAmplitude={38}
                         blendSoftness={0.28}
@@ -159,7 +159,7 @@ export function Hero() {
                                     Where{" "}
                                     <span
                                         data-pulse
-                                        className="inline-block origin-left text-[1.12em] font-bold"
+                                        className="inline-block origin-left text-[1.12em] font-bold italic"
                                     >
                                         AI Intelligence
                                     </span>

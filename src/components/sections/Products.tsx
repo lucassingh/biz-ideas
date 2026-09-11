@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, Brain, BookOpen, Mic, Pause, Play, Settings2, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Brain, BookOpen, Mic, Pause, Play, Settings2, type LucideIcon } from "lucide-react";
 import { useCallback, useEffect, useState } from "react";
+import { onHashLinkClick } from "@/lib/hashLink";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section, SectionInner, SectionLabel, SectionSub, SectionTitle } from "@/components/ui/Section";
 
@@ -161,6 +162,7 @@ export function Products() {
                                 <p className="mb-7 text-[1rem] leading-relaxed text-dark/60">{active.description}</p>
                                 <a
                                     href="#contact"
+                                    onClick={(e) => onHashLinkClick(e, "#contact")}
                                     className="inline-flex items-center gap-1.5 text-[0.95rem] font-semibold text-secondary transition-opacity hover:opacity-70"
                                 >
                                     {active.linkLabel}
@@ -173,7 +175,7 @@ export function Products() {
                                         key={feature}
                                         className="flex items-start gap-3 rounded-xl bg-main-bg px-4 py-3.5 text-[0.92rem] text-dark/75"
                                     >
-                                        <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2} aria-hidden="true" />
+                                        <ArrowUpRight className="mt-0.5 h-4 w-4 shrink-0 text-accent" strokeWidth={2} aria-hidden="true" />
                                         {feature}
                                     </li>
                                 ))}
