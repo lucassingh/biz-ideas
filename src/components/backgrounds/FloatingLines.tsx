@@ -198,8 +198,8 @@ void main() {
 `;
 
 const FloatingLines: React.FC<FloatingLinesProps> = ({
-  color1 = "#3895D3",
-  color2 = "#072F5F",
+  color1 = "#662D91",
+  color2 = "#F75D00",
   enabledWaves = ["top", "middle", "bottom"],
   lineCount = 6,
   lineDistance = 5,

@@ -26,7 +26,7 @@ export function Navbar() {
   return (
     <header>
       <CardNav
-        logo={<LogoFull className="h-6 w-auto text-primary md:h-7" />}
+        logo={<LogoFull className="h-6 w-auto text-logo-gray md:h-7" />}
         items={items}
         ctaLabel="Book a Call →"
         ctaHref="#contact"

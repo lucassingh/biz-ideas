@@ -102,7 +102,7 @@ const columnB = testimonials.filter((_, i) => i % 2 === 1);
 
 function TestimonialCard({ quote, name, role, company, avatar }: Testimonial) {
   return (
-    <div className="rounded-2xl bg-light p-6 shadow-[0_6px_16px_rgba(7,47,95,0.1)]">
+    <div className="rounded-2xl bg-light p-6 shadow-[0_6px_16px_rgba(247,93,0,0.1)]">
       <p className="text-[0.92rem] leading-relaxed text-dark/80">&ldquo;{quote}&rdquo;</p>
       <div className="mt-5 flex items-center gap-3">
         <img
@@ -137,7 +137,7 @@ export function Testimonials() {
     <div className="overflow-hidden bg-main-bg px-6 py-20 sm:px-8 md:py-28">
       <div className="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-[400px_1fr] lg:items-center lg:gap-16">
         <Reveal>
-          <h2 className="text-[clamp(2rem,4vw,2.6rem)] font-bold leading-[1.1] text-primary">
+          <h2 className="text-[clamp(2rem,4vw,2.6rem)] font-bold leading-[1.1] text-ink">
             Feedback we never
             <br />
             had to ask for.

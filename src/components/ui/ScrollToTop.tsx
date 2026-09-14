@@ -40,7 +40,7 @@ export function ScrollToTop() {
                     transition={{ duration: 0.35, ease: "easeOut" }}
                     whileHover={{ y: -3, scale: 1.05 }}
                     whileTap={{ scale: 0.93 }}
-                    className="fixed bottom-5 right-5 z-40 flex h-[52px] w-[52px] items-center justify-center rounded-full bg-light text-primary shadow-[0_8px_40px_rgba(7,47,95,0.16)] ring-1 ring-dark/[0.06] transition-shadow duration-300 hover:shadow-[0_12px_48px_rgba(7,47,95,0.24)]"
+                    className="fixed bottom-5 right-5 z-40 flex h-[52px] w-[52px] items-center justify-center rounded-full bg-light text-primary shadow-[0_8px_40px_rgba(247,93,0,0.16)] ring-1 ring-dark/[0.06] transition-shadow duration-300 hover:shadow-[0_12px_48px_rgba(247,93,0,0.24)]"
                 >
                     <ArrowUp className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
                 </motion.button>

@@ -137,7 +137,7 @@ export function Products() {
             </SectionInner>
 
             <Reveal className="mx-auto mt-6 max-w-[1500px] px-6 sm:px-8 lg:px-10">
-                <div className="overflow-hidden rounded-[28px] bg-light p-4 shadow-[0_20px_60px_rgba(7,47,95,0.12)] sm:p-12 lg:p-16">
+                <div className="overflow-hidden rounded-[28px] bg-light p-4 shadow-[0_20px_60px_rgba(247,93,0,0.12)] sm:p-12 lg:p-16">
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={active.name}
@@ -156,7 +156,7 @@ export function Products() {
                                 >
                                     {active.badge}
                                 </span>
-                                <h3 className="mb-4 text-[2rem] font-bold tracking-tight text-primary sm:text-[2.2rem]">
+                                <h3 className="mb-4 text-[2rem] font-bold tracking-tight text-ink sm:text-[2.2rem]">
                                     {active.name}
                                 </h3>
                                 <p className="mb-7 text-[1rem] leading-relaxed text-dark/60">{active.description}</p>

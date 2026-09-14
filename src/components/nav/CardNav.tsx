@@ -202,7 +202,7 @@ const CardNav: React.FC<CardNavProps> = ({
           isExpanded ? "open" : ""
         } relative block h-[60px] overflow-hidden rounded-2xl p-0 ring-1 transition-[background-color,box-shadow] duration-300 will-change-[height] ${
           scrolled
-            ? "shadow-[0_8px_40px_rgba(7,47,95,0.12)] ring-dark/[0.06]"
+            ? "shadow-[0_8px_40px_rgba(247,93,0,0.12)] ring-dark/[0.06]"
             : "shadow-none ring-transparent"
         }`}
         style={{ backgroundColor: scrolled ? scrolledColor : baseColor }}

@@ -7,12 +7,21 @@
  * color anywhere else in the codebase.
  */
 @theme {
-  --color-primary: #072f5f;
-  --color-secondary: #1261a0;
-  --color-accent: #3895d3;
+  --color-primary: #f75d00;
+  --color-secondary: #c52126;
+  --color-accent: #662d91;
   --color-light: #ffffff;
   --color-dark: #1d1d1f;
   --color-main-bg: #f5f5f7;
+  /* Former primary/secondary text color, now neutral so headings don't
+     inherit the vivid brand orange/red. */
+  --color-ink: #222222;
+  /* SVG logo marks — a touch lighter than --color-ink so they read as
+     "grayed", not pure ink. */
+  --color-logo-gray: #4d4d4d;
+  /* Partner-logo marquee — lighter than --color-logo-gray so the strip
+     stays subtle, but still clearly darker than --color-main-bg. */
+  --color-logo-marquee: #a8a8a8;
 
   --font-heading: var(--font-display);
   --font-body: var(--font-text);

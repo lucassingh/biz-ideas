@@ -62,7 +62,7 @@ export function SectionLabel({
 }) {
   return (
     <div
-      className={`mb-4 inline-flex items-center gap-2 text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-secondary ${
+      className={`mb-4 inline-flex items-center gap-2 text-[0.78rem] font-semibold uppercase tracking-[0.14em] text-accent ${
         center ? "justify-center" : ""
       } ${className}`}
     >
@@ -82,7 +82,7 @@ export function SectionTitle({
   as?: "h1" | "h2";
 }) {
   return (
-    <Tag className={`text-[clamp(2rem,4.5vw,3rem)] leading-[1.1] tracking-tight text-primary ${className}`}>
+    <Tag className={`text-[clamp(2rem,4.5vw,3rem)] leading-[1.1] tracking-tight text-ink ${className}`}>
       {children}
     </Tag>
   );

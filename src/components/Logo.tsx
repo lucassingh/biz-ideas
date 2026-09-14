@@ -3,7 +3,7 @@ import type { SVGProps } from "react";
 /**
  * Brand marks, inlined as SVG (not <img>) so their color is driven by
  * `currentColor` — set it via a Tailwind text-color utility (e.g.
- * `text-primary`) wherever the logo is used, and it stays in sync with
+ * `text-logo-gray`) wherever the logo is used, and it stays in sync with
  * the palette tokens in globals.css.
  */
 

@@ -29,7 +29,7 @@ function BrandMark({ file, name, scale = 1 }: Brand) {
     <span className="inline-flex items-center justify-center" style={{ width: LOGO_SLOT_WIDTH }}>
       <span
         aria-hidden="true"
-        className="block w-full bg-primary"
+        className="block w-full bg-logo-marquee"
         style={{
           height: "var(--logoloop-logoHeight)",
           transform: scale !== 1 ? `scale(${scale})` : undefined,
@@ -57,7 +57,7 @@ export function LogosStrip() {
   return (
     <div id="partners" className="bg-main-bg">
       <Reveal className="mx-auto max-w-[1200px] px-6 py-16 sm:px-8 md:py-20">
-        <h3 className="mb-14 text-center text-[1.65rem] font-semibold tracking-tight text-primary sm:mb-16 sm:text-[1.95rem]">
+        <h3 className="mb-14 text-center text-[1.65rem] font-semibold tracking-tight text-ink sm:mb-16 sm:text-[1.95rem]">
           Powered by the Bizit Global Technology Ecosystem
         </h3>
         <LogoLoop

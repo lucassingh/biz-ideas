@@ -45,7 +45,7 @@ export function Stats() {
                     repeatDelay: (stats.length - 1) * DIP_DURATION,
                   },
             }}
-            className={`flex flex-col justify-between overflow-hidden rounded-2xl p-7 shadow-[0_16px_40px_rgba(7,47,95,0.16)] ${bg}`}
+            className={`flex flex-col justify-between overflow-hidden rounded-2xl p-7 shadow-[0_16px_40px_rgba(247,93,0,0.16)] ${bg}`}
           >
             <div className="text-[1.35rem] font-semibold leading-[1.2] text-light">
               {titleLines[0]}

@@ -39,8 +39,8 @@ export function CTA() {
 
   const palette = useMemo(
     () => ({
-      accent: readPaletteHex("--color-accent", "#3895D3"),
-      primary: readPaletteHex("--color-primary", "#072F5F"),
+      accent: readPaletteHex("--color-accent", "#662D91"),
+      primary: readPaletteHex("--color-primary", "#F75D00"),
     }),
     [],
   );

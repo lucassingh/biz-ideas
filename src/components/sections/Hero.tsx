@@ -41,9 +41,9 @@ export function Hero() {
     const [reduceMotion, setReduceMotion] = useState(false);
     const palette = useMemo(
         () => ({
-            accent: readPaletteHex("--color-accent", "#3895D3"),
-            secondary: readPaletteHex("--color-secondary", "#1261A0"),
-            primary: readPaletteHex("--color-primary", "#072F5F"),
+            accent: readPaletteHex("--color-accent", "#662D91"),
+            secondary: readPaletteHex("--color-secondary", "#C52126"),
+            primary: readPaletteHex("--color-primary", "#F75D00"),
         }),
         [],
     );
@@ -177,10 +177,10 @@ export function Hero() {
                         </p>
 
                         <div data-fade className="mt-10 flex flex-wrap items-center gap-4">
-                            <Button href="#contact" variant="primary">
+                            <Button href="#contact" variant="inverse">
                                 Schedule a Free Demo →
                             </Button>
-                            <Button href="#products" variant="inverse">
+                            <Button href="#products" variant="outline-light">
                                 Explore Our Products
                             </Button>
                         </div>

@@ -72,7 +72,7 @@ export function HowItWorks() {
                     {step.num}
                   </div>
                   <motion.div
-                    className="absolute inset-0 flex items-center justify-center rounded-full bg-primary text-[1.35rem] font-bold text-light shadow-[0_16px_36px_rgba(7,47,95,0.32)] sm:text-[1.5rem]"
+                    className="absolute inset-0 flex items-center justify-center rounded-full bg-primary text-[1.35rem] font-bold text-light shadow-[0_16px_36px_rgba(247,93,0,0.32)] sm:text-[1.5rem]"
                     animate={{ opacity: isActive ? 1 : 0, scale: isActive ? 1.1 : 1 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                   >
@@ -95,7 +95,7 @@ export function HowItWorks() {
           })}
         </motion.div>
 
-        <div className="relative mx-auto mt-10 min-h-[15rem] max-w-[720px] overflow-hidden rounded-[28px] bg-light shadow-[0_20px_60px_rgba(7,47,95,0.1)] sm:mt-12 sm:min-h-[13rem]">
+        <div className="relative mx-auto mt-10 min-h-[15rem] max-w-[720px] overflow-hidden rounded-[28px] bg-light shadow-[0_20px_60px_rgba(247,93,0,0.1)] sm:mt-12 sm:min-h-[13rem]">
           {steps.map((step, i) => (
             <motion.div
               key={step.num}
@@ -103,7 +103,7 @@ export function HowItWorks() {
               animate={{ opacity: i === activeIndex ? 1 : 0 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              <h3 className="text-[1.9rem] font-bold text-primary sm:text-[2.15rem]">{step.title}</h3>
+              <h3 className="text-[1.9rem] font-bold text-ink sm:text-[2.15rem]">{step.title}</h3>
               <p className="mx-auto mt-4 max-w-[480px] text-[1.1rem] leading-relaxed text-dark/60">
                 {step.description}
               </p>

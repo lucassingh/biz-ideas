@@ -85,9 +85,9 @@ export function Services() {
   const reduceMotion = useReducedMotion();
   const palette = useMemo(
     () => ({
-      primary: readPaletteHex("--color-primary", "#072F5F"),
-      secondary: readPaletteHex("--color-secondary", "#1261A0"),
-      accent: readPaletteHex("--color-accent", "#3895D3"),
+      primary: readPaletteHex("--color-primary", "#F75D00"),
+      secondary: readPaletteHex("--color-secondary", "#C52126"),
+      accent: readPaletteHex("--color-accent", "#662D91"),
     }),
     [],
   );
@@ -114,7 +114,7 @@ export function Services() {
               <RevealItem
                 key={title}
                 as="article"
-                className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-light p-8 shadow-[0_10px_30px_rgba(7,47,95,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(7,47,95,0.16)] ${
+                className={`group relative flex flex-col justify-between overflow-hidden rounded-2xl bg-light p-8 shadow-[0_10px_30px_rgba(247,93,0,0.08)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(247,93,0,0.16)] ${
                   isLarge ? "lg:col-span-2 lg:row-span-2" : ""
                 }`}
               >
@@ -126,7 +126,7 @@ export function Services() {
                   >
                     <Icon className={isLarge ? "h-7 w-7" : "h-5 w-5"} strokeWidth={1.75} aria-hidden="true" />
                   </div>
-                  <h3 className={`mb-2.5 font-semibold text-primary ${isLarge ? "text-[1.35rem]" : "text-[1.1rem]"}`}>
+                  <h3 className={`mb-2.5 font-semibold text-ink ${isLarge ? "text-[1.35rem]" : "text-[1.1rem]"}`}>
                     {title}
                   </h3>
                   <p className={`leading-relaxed text-dark/60 ${isLarge ? "text-[0.98rem]" : "text-[0.92rem]"}`}>
